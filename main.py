@@ -5,7 +5,7 @@ from pydantic import BaseModel
 import openai
 import os
 from dotenv import load_dotenv
-from mangum import Mangum
+
 
 load_dotenv()
 
@@ -18,7 +18,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-handler = Mangum(app)
 
 openai.api_key = os.getenv("openai.api_key")
 
